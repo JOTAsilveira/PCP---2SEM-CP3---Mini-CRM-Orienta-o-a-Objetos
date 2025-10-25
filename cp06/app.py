@@ -4,10 +4,6 @@ from stages import Lead
 from repo import LeadRepository
 
 class CRMApp:
-    """
-    Interface simples de linha de comando.
-    Mantida apenas com as operações existentes (adicionar e listar).
-    """
     def __init__(self, repo: LeadRepository | None = None) -> None:
         self.repo = repo or LeadRepository()
 
@@ -64,3 +60,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
