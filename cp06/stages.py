@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 class Lead:
-    """Entidade de domínio: Lead do Mini-CRM."""
     def __init__(self, name: str, company: str, email: str):
         if not name:
             raise ValueError("Nome é obrigatório.")
@@ -32,3 +31,4 @@ class Lead:
             company=data.get("company", ""),
             email=data.get("email", ""),
         )
+
