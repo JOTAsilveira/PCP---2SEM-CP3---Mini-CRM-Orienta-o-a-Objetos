@@ -6,10 +6,6 @@ from typing import List
 from stages import Lead
 
 class LeadRepository:
-    """
-    Repositório de Leads (persistência em JSON).
-    Não adiciona novas funcionalidades além de salvar/listar.
-    """
     def __init__(self, base_dir: Path | None = None) -> None:
         root = Path(__file__).resolve().parent
         self.data_dir = (base_dir or (root / "data"))
@@ -38,3 +34,4 @@ class LeadRepository:
     def list_leads(self) -> List[Lead]:
         rows = self._load_raw()
         return [Lead.from_dict(r) for r in rows]
+
